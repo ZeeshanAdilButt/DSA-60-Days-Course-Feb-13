@@ -6,3 +6,13 @@ for (let i = 0; i < input.length; i++) {
     }
 }
 console.log("Word count: " + wordCount);
+
+
+function isCharacter(character) {
+    if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+

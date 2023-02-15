@@ -15,3 +15,12 @@ int main()
     std::cout << "Word count: " << wordCount << std::endl;
     return 0;
 }
+
+bool isCharacter(char character) {
+    if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
