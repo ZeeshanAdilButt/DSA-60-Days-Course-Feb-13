@@ -1,5 +1,6 @@
 int binarySearch(int arr[], int target, int n) {
     int left = 0, right = n - 1;
+    
     while (left <= right) {
         int mid = (left + right) / 2;
         if (arr[mid] == target) {
