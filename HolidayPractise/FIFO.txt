@@ -1,0 +1,21 @@
+FIFO stands for "First-In, First-Out" and is a term used to describe a method of managing data structures. Here are some important points about FIFO in Data Structures and Algorithms (DSA):
+
+FIFO is a scheduling and queuing method that follows the principle of "First-In, First-Out." This means that the first item that is added to a queue is the first one to be removed.
+
+Queues are a data structure that uses FIFO to manage data. Items are added to the back of the queue, and they are removed from the front of the queue.
+
+The opposite of FIFO is LIFO (Last-In, First-Out), which is used in stack data structures.
+
+Queues are used in many applications, such as buffering data between two processes, handling requests in a web server, and modeling real-world situations like waiting in a line.
+
+In a queue, inserting an item is called "enqueuing" or "pushing," and removing an item is called "dequeuing" or "popping."
+
+When a queue is full, attempting to enqueue a new item will result in an overflow error. Similarly, trying to dequeue an item from an empty queue will result in an underflow error.
+
+Queues can be implemented using arrays or linked lists. Linked list implementations are preferred since they allow for dynamic allocation of memory and can handle large queues more efficiently.
+
+Priority queues are a variant of queues where each item has a priority associated with it. The items are dequeued based on their priority, rather than their order of insertion.
+
+Circular queues are a variant of queues that use a circular array to avoid wasting space in the array when elements are dequeued.
+
+In some cases, the performance of a queue can be improved using techniques like double-ended queues (dequeues) or priority queues, depending on the specific use case.

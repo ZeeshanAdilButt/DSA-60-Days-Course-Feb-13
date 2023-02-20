@@ -1,0 +1,68 @@
+What is a Linked List?
+A linked list is a linear data structure that stores a collection of data elements dynamically.
+
+Nodes represent those data elements, and links or pointers connect each node.
+Each node consists of two fields, the information stored in a linked list and a pointer that stores the address of its next node.
+
+The last node contains null in its second field because it will point to no node.
+A linked list can grow and shrink its size, as per the requirement.
+
+It does not waste memory space.
+
+*-----------------------------------------------------------------------------------*
+Types of Linked Lists
+The linked list mainly has three types, they are:
+
+Singly Linked List
+Doubly Linked List
+Circular Linked List
+
+Singly Linked List:
+
+A singly linked list is the most common type of linked list. Each node has data and an address field that contains a reference to the next node.
+
+Doubly Linked List
+There are two pointer storage blocks in the doubly linked list. The first pointer block in each node stores the address of the previous node. Hence, in the doubly linked inventory, there are three fields that are the previous pointers, that contain a reference to the previous node. Then there is the data, and last you have the next pointer, which points to the next node. Thus, you can go in both directions (backward and forward).
+
+Circular Linked List
+The circular linked list is extremely similar to the singly linked list. The only difference is that the last node is connected with the first node, forming a circular loop in the circular linked list.
+
+Singly linked list: In a singly linked list, each node has a pointer to the next node in the list. This is the simplest and most common type of linked list.
+
+Doubly linked list: In a doubly linked list, each node has pointers to both the next and previous nodes in the list. This allows for easier traversal in both directions, but requires more memory than a singly linked list.
+
+Circular linked list: In a circular linked list, the last node points back to the first node, forming a loop. This can be useful in certain situations, such as implementing a queue.
+
+Sorted linked list: In a sorted linked list, the nodes are stored in a specific order, such as ascending or descending. This can make searching and inserting elements more efficient.
+
+Unrolled linked list: An unrolled linked list stores multiple elements in each node. This can reduce the number of nodes required to store a large list, which can improve performance.
+
+Skip list: A skip list is a probabilistic data structure that uses multiple layers of linked lists to enable faster searching. Nodes at higher layers act as shortcuts, allowing elements to be found more quickly.
+
+Self-organizing linked list: A self-organizing linked list is designed to automatically reorder itself based on how frequently each element is accessed. This can improve performance for frequently accessed elements.
+
+XOR linked list: An XOR linked list uses bitwise XOR operations to store pointers to the previous and next nodes. This can save memory by storing two pointers in a single machine word.
+
+Multi-level linked list: A multi-level linked list is a hierarchical structure that uses multiple levels of linked lists to store data. This can be useful for storing data that has a tree-like structure.
+
+Lock-free linked list: A lock-free linked list is designed to enable concurrent access without requiring locks. This can improve performance in multi-threaded environments
+
+A linked list is a linear data structure that consists of a sequence of nodes, where each node stores a value and a reference (pointer) to the next node in the sequence.
+
+There are two types of linked lists: singly linked list and doubly linked list. In a singly linked list, each node has only one reference to the next node. In a doubly linked list, each node has two references: one to the next node and one to the previous node.
+
+Unlike arrays, linked lists do not have a fixed size, and nodes can be inserted or removed at any position in the list.
+
+Linked lists have a dynamic memory allocation that allows them to efficiently use memory compared to arrays.
+
+One disadvantage of linked lists is that they have slower access time than arrays since accessing a specific element requires traversing the entire list to find it.
+
+Linked lists are commonly used in other data structures, such as stacks, queues, and hash tables.
+
+Linked lists are useful for implementing dynamic data structures, such as memory allocation in operating systems and dynamic memory allocation in programming languages.
+
+The performance of linked lists depends on the type of operations performed. Insertion and deletion of nodes can be done in constant time, O(1), but searching for an element in the list can take linear time, O(n).
+
+Singly linked lists are used in algorithms that require searching for an element in the list or traversing the list in a linear order, such as merge sort and quicksort.
+
+Doubly linked lists are used in algorithms that require searching or traversing in both forward and backward directions, such as LRU cache and some scheduling algorithms.

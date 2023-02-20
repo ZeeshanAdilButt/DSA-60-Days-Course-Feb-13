@@ -1,0 +1,19 @@
+ Introduction to DSA: The course starts with an introduction to DSA, including its importance in computer science, common data structures and algorithms, and the basic concepts of time and space complexity.
+
+Arrays: The course covers the basics of arrays, including how to declare and initialize arrays, how to access and manipulate array elements, and how to implement common array-based algorithms.
+
+Linked Lists: The course covers the basics of linked lists, including how to implement a singly linked list and a doubly linked list, how to traverse a linked list, and how to insert and delete nodes in a linked list.
+
+Stacks and Queues: The course covers the basics of stacks and queues, including how to implement a stack and a queue using an array or a linked list, how to perform common stack and queue operations, and how to use stacks and queues to solve real-world problems.
+
+Trees: The course covers the basics of trees, including the basic concepts of binary trees, binary search trees, and balanced trees, and how to implement common tree-based algorithms.
+
+Graphs: The course covers the basics of graphs, including the basic concepts of directed and undirected graphs, the different types of graph traversal algorithms, and how to implement common graph-based algorithms.
+
+Sorting and Searching: The course covers the basics of sorting and searching algorithms, including how to implement bubble sort, selection sort, insertion sort, merge sort, quick sort, and binary search.
+
+Recursion: The course covers the basics of recursion, including how to implement recursive functions, how to use recursion to solve problems that involve dividing a problem into smaller subproblems, and how to analyze the time and space complexity of recursive algorithms.
+
+Dynamic Programming: The course covers the basics of dynamic programming, including the basic concepts of memoization and tabulation, and how to use dynamic programming to solve complex problems.
+
+LIFO data structures are opposite to FIFO (First-In-First-Out) data structures, where the first element added is the first one to be removed.

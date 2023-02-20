@@ -1,0 +1,21 @@
+-> Hashmap and dictionary are both used for efficient key-value mapping in data structures and algorithms (DSA)
+
+->Implementation: A hashmap is implemented as an array of buckets where each bucket is a linked list. Each key-value pair is stored in a bucket after hashing the key. On the other hand, a dictionary is implemented as a hash table, which is an array of key-value pairs.
+
+Key type: In a hashmap, the key can be any object that has a valid hash code and implements the equals method. In a dictionary, the key is typically a string or a number.
+
+Collisions: Collisions occur in both data structures when two or more keys hash to the same index in the array. In a hashmap, collisions are resolved by chaining, i.e., storing multiple key-value pairs in a linked list at the same index. In a dictionary, collisions are resolved by open addressing, which involves probing for an empty slot in the hash table.
+
+Lookup time: The time complexity of looking up a value in a hashmap is O(1) on average, but can be O(n) in the worst case if there are many collisions. In a dictionary, the time complexity of looking up a value is also O(1) on average, but can be O(n) in the worst case if there are many collisions and probing is required.
+
+Memory usage: Hashmaps generally use more memory than dictionaries because of the linked lists used to resolve collisions. Dictionaries have a fixed size and do not use extra memory for chaining.
+
+Language support: Hashmap is a commonly used data structure in Java, C++, and other languages, whereas a dictionary is often associated with Python and some other languages.
+
+
+-> a dictionary is a data structure representing a set of elements, with insertion, deletion, and tests for membership; the elements may be, but are not necessarily, composed of distinct key and value parts
+
+-> a Hashmap is an associative data structure able to store a set of keys, each associated with one (or sometimes more than one - e.g. C++ multimap) value, with the ability to access and erase existing entries given only the key.
+
+
+In summary, both hashmap and dictionary are commonly used data structures for key-value mapping, with some differences in their implementation, key types, collision resolution, lookup time, memory usage, and language support.

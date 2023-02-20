@@ -1,0 +1,21 @@
+LIFO stands for Last-In-First-Out and is a concept used in computer science to describe a data structure where the last item added to the structure is the first one to be removed. Here are some key points related to LIFO:
+
+LIFO is a type of data structure where the most recently added element is the first one to be removed.
+
+The most common implementation of LIFO is the stack, where elements are added to the top and removed from the top.
+
+The push() operation adds an element to the top of the LIFO data structure, while the pop() operation removes the top element.
+
+LIFO data structures are useful in many algorithms, such as backtracking, depth-first search, and expression evaluation.
+
+The size of a LIFO data structure is dynamic and can grow or shrink as elements are added or removed.
+
+LIFO data structures are simple and efficient to implement using an array or a linked list.
+
+LIFO data structures can also be implemented using recursion, where the function call stack acts as the LIFO data structure.
+
+LIFO data structures are used in many real-world applications, such as call stacks in programming languages, undo-redo operations in text editors, and browser history in web browsers.
+
+The order of the elements in a LIFO data structure is reversed compared to the order in which they were added.
+
+LIFO data structures are opposite to FIFO (First-In-First-Out) data structures, where the first element added is the first one to be removed.
