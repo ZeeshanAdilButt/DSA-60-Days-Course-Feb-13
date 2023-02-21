@@ -12,6 +12,6 @@ def trim_sentence(sentence):
 
     # Return the trimmed sentence
     return sentence[start:end+1]
-
+ 
 
 

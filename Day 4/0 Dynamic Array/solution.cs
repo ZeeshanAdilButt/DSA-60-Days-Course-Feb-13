@@ -1,13 +1,24 @@
+
+
+
 public class DynamicArray<T>
 {
     private T[] data;
     private int size;
+    public int sizeFactor;
 
-    public DynamicArray()
+    public DynamicArray(int sizeFactor)
     {
-        data = new T[1];
+        data = new T[10];
         size = 0;
+
+        if(sizeFactor < 1.5){
+                return NotSyupportedExcetopn();
+        }
+
+        sizeFactor  = sizeFactor;
     }
+
 
     public int Length
     {
@@ -24,9 +35,11 @@ public class DynamicArray<T>
     {
         if (size == data.Length)
         {
-            Resize(2 * data.Length);
+            Resize(sizeFactor * data.Length);
         }
+        
         data[size] = item;
+
         size++;
     }
 
