@@ -1,7 +1,8 @@
 public ListNode MergeTwoLists(ListNode h1, ListNode h2) {
 
 
-        ListNode head = new ListNode(0);
+        ListNode dummy = new ListNode(0);
+        
         ListNode newlist = dummy;
         
         //
