@@ -7,12 +7,12 @@ public class Solution {
         
         for (int sellTime=1; sellTime< prices.Length; sellTime++){
             
-            //
+            // low point > high pointer
             if(prices[buyTime] > prices[sellTime]){
-                buyTime = sellTime;
+                buyTime = sellTime; // this mean a lower buing price
             }
             
-            MaxProfit = Math.Max(prices[sellTime] - prices[buyTime], MaxProfit);
+            MaxProfit = Math.Max(MaxProfit, prices[sellTime] - prices[buyTime]);
             
         }
         
