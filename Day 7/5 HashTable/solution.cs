@@ -31,9 +31,10 @@
             public string Get(string key)
             {
                 int index = GetHash(key);
+                
                 while (keys[index] != null)
                 {
-                    if (keys[index] == key)
+                    if (keys[index] == key) // bez //zeb
                     {
                         return values[index];
                     }
