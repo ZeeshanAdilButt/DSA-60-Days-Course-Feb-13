@@ -1,0 +1,30 @@
+ public int Compress(char[] chars) {
+    if (chars == null || chars.Length == 0) {
+        return 0;
+    }
+    
+    char prevChar = chars[0];
+    int count = 1;
+    int writeIndex = 0;
+    
+    for (int i = 1; i <= chars.Length; i++) {
+
+        if (i < chars.Length && chars[i] == prevChar) {
+            count++;
+        } 
+        else {
+            chars[writeIndex++] = prevChar;
+            if (count > 1) {
+                foreach (char c in count.ToString()) {
+                    chars[writeIndex++] = c;
+                }
+            }
+            if (i < chars.Length) {
+                prevChar = chars[i];
+                count = 1;
+            }
+        }
+    }
+    
+    return writeIndex;
+}
