@@ -1,0 +1,27 @@
+public static int MemoizedFibonacci(int n)
+{
+    int[] memo = new int[n + 1];
+    return MemoizedFibonacciHelper(n, memo);
+}
+
+private static int MemoizedFibonacciHelper(int n, int[] memo)
+{
+    if (memo[n] != 0)
+    {
+        return memo[n];
+    }
+
+    int fibonacciNumber;
+
+    if (n <= 1)
+    {
+        fibonacciNumber = n;
+    }
+    else
+    {
+        fibonacciNumber = MemoizedFibonacciHelper(n - 1, memo) + MemoizedFibonacciHelper(n - 2, memo);
+    }
+
+    memo[n] = fibonacciNumber;
+    return fibonacciNumber;
+}
