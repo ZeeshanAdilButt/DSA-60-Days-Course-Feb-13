@@ -1,0 +1,22 @@
+public static int IterativeFibonacci(int n)
+{
+    if (n <= 1)
+    {
+        return n;
+    }
+
+    int currentFibonacci = 1;
+    int previousFibonacci = 1;
+
+    for (int i = 2; i < n; i++)
+    {
+        //pointer is going to change
+        int temp = currentFibonacci;
+
+        currentFibonacci += previousFibonacci;
+
+        previousFibonacci = temp;
+    }
+
+    return currentFibonacci;
+}

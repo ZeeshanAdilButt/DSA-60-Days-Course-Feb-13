@@ -1,0 +1,24 @@
+function revise(essay) {
+
+rewrite(essay);
+get_feedback_on(essay);
+
+if essay.complete?;
+    revise(essay) 
+
+}
+
+
+Class essay{
+
+    string text;
+    int rating;
+}
+
+get_feedback_on(essay){
+
+essay.rating = getDay() == 1 ? 10 : 6;\
+
+return essay.rating (essay.comeplete == true) > 8 true : false;
+    
+}

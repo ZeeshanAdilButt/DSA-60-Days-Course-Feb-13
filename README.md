@@ -180,6 +180,50 @@ The advantage of chaining is that it can handle a large number of collisions wit
 However, chaining can suffer from poor cache performance, because the items that hash to the same index may not be contiguous in memory. This can lead to a high number of cache misses and degrade performance. 
 
 
+# Recursion
+
+### Pros and Cons
+
+#### Pros
+
+- Bridges the gap between elegance and complexity
+- Reduces the need for complex loops and auxiliary data structures
+- Can reduce time complexity easily with memoization
+- Works really well with recursive structures like tress and graphs
+
+#### Cons
+- Slowness due to CPU overhead
+- Can lead to out of memory errors / stack overflow exceptions
+- Can be unnecessarily complex if poorly constructed
+
+
+# Sorting Algorithms
+
+### Selection Sort:
+
+Selection Sort is a simple sorting algorithm that works by iterating through an array, finding the smallest element in the unsorted portion of the array, and swapping it with the first element of the unsorted portion. The process is repeated until the entire array is sorted.
+
+### Insertion Sort:
+
+Insertion Sort is a simple sorting algorithm that works by iterating through an array, comparing each element to the elements that come before it, and inserting the element into its correct position in the array.
+
+### Bubble Sort:
+
+Bubble Sort is another simple sorting algorithm that works by repeatedly iterating through an array and swapping adjacent elements if they are in the wrong order.
+
+### Merge Sort:
+
+Merge Sort is a divide-and-conquer sorting algorithm that works by recursively dividing an array into halves, sorting each half, and then merging the two sorted halves back together.
+
+### Quick Sort:
+
+Quick Sort is a divide-and-conquer sorting algorithm that works by partitioning an array into two halves, one with elements smaller than a pivot element and one with elements larger than the pivot, and then recursively sorting each half.
+
+
+
+
+
+
 
 
 

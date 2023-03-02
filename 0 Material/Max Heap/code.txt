@@ -1,0 +1,63 @@
+// MaxHeap class
+public class MaxHeap {
+    private int[] heap;
+    private int size;
+
+    public MaxHeap(int[] arr) {
+        heap = new int[arr.Length];
+        Array.Copy(arr, heap, arr.Length);
+        size = arr.Length;
+        BuildHeap();
+    }
+
+    private void BuildHeap() {
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            Heapify(i);
+        }
+    }
+
+    private void Heapify(int i) {
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int largest = i;
+        if (left < size && heap[left] > heap[largest]) {
+            largest = left;
+        }
+        if (right < size && heap[right] > heap[largest]) {
+            largest = right;
+        }
+        if (largest != i) {
+            Swap(i, largest);
+            Heapify(largest);
+        }
+    }
+
+    public void Insert(int value) {
+        if (size == heap.Length) {
+            Array.Resize(ref heap, 2 * size);
+        }
+        heap[size++] = value;
+        int i = size - 1;
+        while (i > 0 && heap[i] > heap[(i - 1) / 2]) {
+            Swap(i, (i - 1) / 2);
+            i = (i - 1) / 2;
+        }
+    }
+
+    public int ExtractMax() {
+        int max = heap[0];
+        heap[0] = heap[--size];
+        Heapify(0);
+        return max;
+    }
+
+    private void Swap(int i, int j) {
+        int temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+
+    public int Size() {
+        return size;
+    }
+}

@@ -1,0 +1,73 @@
+public static void MergeSort(int[] array)
+{
+    MergeSortHelper(array, 0, array.Length - 1);
+}
+
+private static void MergeSortHelper(int[] array, int leftIndex, int rightIndex)
+{
+    if (leftIndex < rightIndex)
+    {
+        int middleIndex = (leftIndex + rightIndex) / 2;
+
+        //recursive calls
+        MergeSortHelper(array, leftIndex, middleIndex);
+        MergeSortHelper(array, middleIndex + 1, rightIndex);
+
+        //execution operation
+        Merge(array, leftIndex, middleIndex, rightIndex);
+    }
+}
+
+private static void Merge(int[] array, int leftIndex, int middleIndex, int rightIndex)
+{
+    int leftArrayLength = middleIndex - leftIndex + 1; // inverse
+    int rightArrayLength = rightIndex - middleIndex;
+
+    int[] leftArray = new int[leftArrayLength];
+    int[] rightArray = new int[rightArrayLength];
+
+    for (int i = 0; i < leftArrayLength; i++)
+    {
+        leftArray[i] = array[leftIndex + i];
+    }
+
+    for (int j = 0; j < rightArrayLength; j++)
+    {
+        rightArray[j] = array[middleIndex + 1 + j];
+    }
+
+    int leftArrayIndex = 0; // 
+    int rightArrayIndex = 0;
+
+
+    int mergedArrayIndex = leftIndex;
+
+    while (leftArrayIndex < leftArrayLength && rightArrayIndex < rightArrayLength)
+    {
+        if (leftArray[leftArrayIndex] <= rightArray[rightArrayIndex])
+        {
+            array[mergedArrayIndex] = leftArray[leftArrayIndex];
+            leftArrayIndex++;
+        }
+        else
+        {
+            array[mergedArrayIndex] = rightArray[rightArrayIndex];
+            rightArrayIndex++;
+        }
+        mergedArrayIndex++;
+    }
+
+    while (leftArrayIndex < leftArrayLength)
+    {
+        array[mergedArrayIndex] = leftArray[leftArrayIndex];
+        leftArrayIndex++;
+        mergedArrayIndex++;
+    }
+
+    while (rightArrayIndex < rightArrayLength)
+    {
+        array[mergedArrayIndex] = rightArray[rightArrayIndex];
+        rightArrayIndex++;
+        mergedArrayIndex++;
+    }
+}

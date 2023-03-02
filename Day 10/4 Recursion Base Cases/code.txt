@@ -1,0 +1,11 @@
+public void recursion(int someValue) {
+
+if (someValue == 10){
+return;
+}
+
+print(someValue);
+
+return recursion (someValue + 1);
+
+}

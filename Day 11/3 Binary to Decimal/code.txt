@@ -1,0 +1,16 @@
+public static string DecimalToBinary(int n)
+{
+    if (n == 0)
+    {
+        return "0";
+    }
+    else if (n == 1)
+    {
+        return "1";
+    }
+    else
+    {
+
+        return DecimalToBinary(n / 2) + (n % 2).ToString();
+    }
+}

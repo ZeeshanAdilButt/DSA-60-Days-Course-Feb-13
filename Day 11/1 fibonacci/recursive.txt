@@ -1,0 +1,21 @@
+
+// 10
+
+public static int RecursiveFibonacci(int n)
+{
+    //base case
+    if (n == 1)
+    {
+        return 1;
+    }
+    if (n == 0)
+    {
+        return 0;
+    }
+
+    else
+    {
+        // 9
+        return RecursiveFibonacci(n - 1) + RecursiveFibonacci(n - 2);
+    }
+}
