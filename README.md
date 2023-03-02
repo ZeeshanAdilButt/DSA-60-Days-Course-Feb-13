@@ -1,5 +1,7 @@
 # DSA-60-Days-Course-Feb-13
 
+A repo for my 60 days course for my DSA students to teach them basic to intermediate Data Structures and Complete 80+ Leetcode problems.
+
 
 ## Mathemetics Basics:
 
