@@ -1,0 +1,26 @@
+using System;
+
+public class Solution {
+    public string LongestCommonPrefix(string[] strs) {
+        string longestCommonPrefix = "";
+
+        if (strs == null || strs.Length == 0) {
+            return longestCommonPrefix;
+        }
+
+        int index = 0;
+
+        foreach (char c in strs[0].ToCharArray()) {
+            for (int i = 1; i < strs.Length; i++) {
+                if (index >= strs[i].Length || c != strs[i][index]) {
+                    return longestCommonPrefix;
+                }
+            }
+
+            longestCommonPrefix += c;
+            index++;
+        }
+
+        return longestCommonPrefix;
+    }
+}

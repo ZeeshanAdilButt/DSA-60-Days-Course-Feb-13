@@ -1,0 +1,32 @@
+public class Solution {
+    public bool ValidPalindrome(string s) {
+        int left = 0, right = s.Length - 1;
+        while (left < right) {
+            if (s[left] != s[right]) {
+                // Try deleting the character at the left index
+                if (IsPalindrome(s, left + 1, right))
+                    return true;
+                // Try deleting the character at the right index
+                if (IsPalindrome(s, left, right - 1))
+                    return true;
+                // If neither option works, the string is not a valid palindrome
+                return false;
+            }
+            left++;
+            right--;
+        }
+        // If we reach here, the string is already a valid palindrome
+        return true;
+    }
+    
+    // Helper function to check if a substring is a palindrome
+    private bool IsPalindrome(string s, int left, int right) {
+        while (left < right) {
+            if (s[left] != s[right])
+                return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
