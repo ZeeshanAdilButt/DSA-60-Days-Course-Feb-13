@@ -1,0 +1,26 @@
+public class Solution {
+    public ListNode GetIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+        
+        HashSet<ListNode> visited = new HashSet<ListNode>();
+        
+        ListNode node = headA;
+        
+        while (node != null) {
+            visited.Add(node);
+            node = node.next;
+        }
+        
+        node = headB;
+        while (node != null) {
+            if (visited.Contains(node)) {
+                return node;
+            }
+            node = node.next;
+        }
+        
+        return null;
+    }
+}

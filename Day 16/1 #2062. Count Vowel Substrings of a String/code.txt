@@ -1,0 +1,33 @@
+ public int CountVowelSubstrings(string word) 
+    {
+        int vow = 0;
+        int n = word.Length;
+        
+        HashSet<char> set = new HashSet<char>();
+        
+        for (int i = 0; i < n - 4; i++) 
+        {
+            set.Clear();
+            
+            for (int j = i; j < n; j++) 
+            {
+                char ch = word[j];
+                
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') 
+                {
+                    set.Add(ch);
+                    
+                    if (set.Count == 5) 
+                    {
+                        vow++;
+                    }
+                } 
+                else 
+                {
+                    break;
+                }
+            }
+        }
+        
+        return vow;
+    }
