@@ -1,0 +1,21 @@
+
+class Solution {
+    public int[][] FlipAndInvertImage(int[][] image) {
+
+        for (int i = 0; i < image.Length; i++) {
+            int j = 0;
+            int k = image[i].Length - 1;
+
+            while (j < k) {
+                int temp = image[i][j];
+                image[i][j++] = image[i][k] == 1 ? 0 : 1;
+                image[i][k--] = temp == 1 ? 0 : 1;
+            }
+            
+            if (j == k) {
+                image[i][j] = image[i][j] == 1 ? 0 : 1;
+            }
+        }
+        return image;
+    }
+}
