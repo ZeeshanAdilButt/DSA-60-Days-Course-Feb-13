@@ -1,0 +1,32 @@
+public class Solution {
+    public int MinCostClimbingStairs(int[] cost) {
+
+int n = cost.Length;
+
+         int[] memo = new int[n]; // initialize the memoization array
+        
+        // set all memoization values to -1
+        for (int i = 0; i < n; i++) {
+            memo[i] = -1;
+        }
+
+        return Math.Min(MinCostClimbingStairsRecurse(cost, 0, memo), MinCostClimbingStairsRecurse(cost, 1, memo)); 
+    }
+    public int MinCostClimbingStairsRecurse(int[] cost, int index, int[] memo) {
+
+        if(index > cost.Length - 1 )
+            return 0;
+
+         if (memo[index] != -1) { // check if value is already memoized
+            return memo[index];
+        }
+
+        //first way
+        int oneStep = cost[index] + MinCostClimbingStairsRecurse(cost, index +1, memo );
+        int twoStep = cost[index] + MinCostClimbingStairsRecurse(cost, index + 2, memo);
+
+        memo[index] = Math.Min(oneStep, twoStep);
+
+        return memo[index];      
+    }
+}

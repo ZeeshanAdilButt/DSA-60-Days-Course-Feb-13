@@ -2,6 +2,14 @@ public class Solution {
    public bool IsPowerOfTwo(int n) {
 
 
+
+    decimal x = Math.log(x,2);
+
+    int y = (int)x;
+    decimal g = y;
+
+    return g == x;
+
     if(n <= 0) {
         return false;
     }
@@ -11,7 +19,7 @@ public class Solution {
     }
 
 
-    
+
     return n == 1;
 }
 

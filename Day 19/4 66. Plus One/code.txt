@@ -1,0 +1,28 @@
+public class Solution {
+   public int[] PlusOne(int[] digits) {
+    int n = digits.Length;
+    
+    // Add 1 to the last digit
+    digits[n-1] += 1;
+    
+    // Handle the carry
+    for (int i = n-1; i > 0; i--) {
+        if (digits[i] == 10) {
+            digits[i] = 0;
+            digits[i-1] += 1;
+        } else {
+            break;
+        }
+    }
+    
+    // Handle the case where the carry propagates to the first digit
+    if (digits[0] == 10) {
+        int[] result = new int[n+1];
+        result[0] = 1;
+        return result;
+    } else {
+        return digits;
+    }
+}
+
+}

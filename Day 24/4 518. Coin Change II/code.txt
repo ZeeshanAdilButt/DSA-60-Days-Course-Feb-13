@@ -1,0 +1,41 @@
+public class Solution {
+
+//     public int Change(int amount, int[] coins) {
+//     int[] dp = new int[amount + 1];
+//     dp[0] = 1;
+    
+//     foreach (int coin in coins) {
+//         for (int i = coin; i <= amount; i++) {
+//             dp[i] += dp[i - coin];
+//         }
+//     }
+    
+//     return dp[amount];
+// }
+
+
+
+public int Change(int amount, int[] coins) {
+    Dictionary<string, int> memo = new Dictionary<string, int>();
+    return CoinChange(coins, amount, 0, memo);
+}
+
+private int CoinChange(int[] coins, int amount, int index, Dictionary<string, int> memo) {
+    if (amount == 0) {
+        return 1;
+    }
+    if (index >= coins.Length || amount < 0) {
+        return 0;
+    }
+    
+    string key = amount + "-" + index;
+    if (memo.ContainsKey(key)) {
+        return memo[key];
+    }
+    
+    int include = CoinChange(coins, amount - coins[index], index, memo);
+    int exclude = CoinChange(coins, amount, index + 1, memo);
+    
+    memo[key] = include + exclude;
+    return memo[key];
+}

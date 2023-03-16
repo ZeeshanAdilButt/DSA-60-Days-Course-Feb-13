@@ -1,0 +1,26 @@
+public class Solution {
+    public bool HasAlternatingBits(int n) {
+         
+//    int prevbit = n&1;
+    int prevBit = n %2;
+
+
+    n = n >>1 ;
+    // n = n/2;
+
+    while (n>0){
+
+        int currbit  = n %2;
+
+
+        if(currbit == prevBit)
+            return false;
+
+        prevBit =  currbit; 
+         n =  n /2 ;
+    }
+
+    return true;
+
+    }
+}

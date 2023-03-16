@@ -1,0 +1,35 @@
+public class Solution {
+    public bool BackspaceCompare(string s, string t) {
+        var sStack = new Stack<char>();
+        var tStack = new Stack<char>();
+        
+        // helper function to process a string and append it to the corresponding stack
+        Action<string, Stack<char>> ProcessString = (str, stack) => {
+            foreach (var c in str) {
+                if (c == '#') {
+                    if (stack.Count > 0) {
+                        stack.Pop();
+                    }
+                } else {
+                    stack.Push(c);
+                }
+            }
+        };
+        
+        ProcessString(s, sStack);
+        ProcessString(t, tStack);
+        
+        // compare the stacks
+        if (sStack.Count != tStack.Count) {
+            return false;
+        }
+        
+        while (sStack.Count > 0 && tStack.Count > 0) {
+            if (sStack.Pop() != tStack.Pop()) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+}

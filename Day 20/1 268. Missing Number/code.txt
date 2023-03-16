@@ -1,0 +1,28 @@
+public class Solution {
+    public int MissingNumber(int[] nums) {
+
+        //                  //2
+        for (int i =0; i < nums.Length; i++)
+        {
+            //move every element which comes on this index to its correct index until a large number comes
+            while(i != nums[i] && nums[i] != nums.Length ){
+                int currentNumber = nums[i];
+
+                //swap
+                int temp = nums[currentNumber];
+                nums[currentNumber] = nums[i];
+                nums[i] = temp;
+            }
+        }
+
+         for (int i =0; i < nums.Length; i++){
+
+            if(i != nums[i]){
+                return i;
+            }
+        }
+
+        return nums.Length;
+        
+    }
+}

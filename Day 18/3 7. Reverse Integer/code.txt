@@ -1,0 +1,22 @@
+public class Solution {
+    public int Reverse(int x) {
+        
+        long rev = 0; // 0+ 3 =>   32 => 321
+
+        while (x != 0) {
+                  
+                 // (3 x 10) + 2
+                  //(32 x 10) + 1
+                  
+            rev = rev * 10 + x % 10; //3
+
+            //remaining num
+            x /= 10;
+        }
+        
+        if (rev > int.MaxValue || rev < int.MinValue) {
+            return 0;
+        }
+        return (int)rev;
+    }
+}

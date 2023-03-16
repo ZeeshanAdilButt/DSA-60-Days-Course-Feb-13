@@ -257,8 +257,35 @@ This result is within the range of a 32-bit integer, and gives us the correct mi
 
 So, in summary, we use left + (right - left) / 2 instead of left + right / 2 to avoid an integer overflow when computing the middle index of a subarray with a large range of indices.
 
+## computing related issues
 
+Floating-point rounding errors are caused by the fact that computers store floating-point numbers using a fixed number of bits, and some decimal numbers cannot be represented exactly in binary. For example, the decimal number 0.1 cannot be represented exactly in binary, so when it is stored as a floating-point number, there will be a small rounding error.
 
+for example: floating-point rounding errors can occur when calculating the logarithm of n and when rounding the result of the logarithm. The tolerance of 1e-10 is used to account for these errors by allowing for small differences between the exact result and the rounded result. If the difference between the two is less than 1e-10, the result is considered to be accurate enough and the function returns true.
+
+1e-10 is scientific notation for a small decimal number: 1 multiplied by 10 raised to the power of -10. So 1e-10 is equivalent to 0.0000000001.
+
+## Bitwise operator
+
+The bitwise shift operators in C# are used to shift the bits of an integer value left or right. There are two types of shift operators:
+
+Left Shift Operator (<<): This operator shifts the bits of the left-hand operand to the left by the number of positions specified by the right-hand operand. The leftmost bits are filled with zeros.
+
+Right Shift Operator (>>): This operator shifts the bits of the left-hand operand to the right by the number of positions specified by the right-hand operand. The rightmost bits are filled with zeros for unsigned values and with the sign bit for signed values.
+
+Here's an example of how to use the bitwise shift operators:
+
+int x = 8;   // binary: 0000 1000
+
+int y = x << 2;   // binary: 0010 0000, decimal: 32
+
+int z = x >> 2;   // binary: 0000 0010, decimal: 2
+
+In the above example, we first declare an integer variable x and initialize it with the value 8 (in binary: 0000 1000). We then use the left shift operator (<<) to shift the bits of x to the left by 2 positions, resulting in the value y of 32 (in binary: 0010 0000).
+
+Next, we use the right shift operator (>>) to shift the bits of x to the right by 2 positions, resulting in the value z of 2 (in binary: 0000 0010).
+
+Note that the bitwise shift operators can also be used with assignment operators, for example: x <<= 2; is equivalent to x = x << 2;.
 
 
 

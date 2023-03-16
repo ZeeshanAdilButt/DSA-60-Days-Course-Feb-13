@@ -1,0 +1,30 @@
+public class Solution {
+    public int[] GardenNoAdj(int n, int[][] paths) {
+        // create adjacency list for each garden
+        List<int>[] adj = new List<int>[n+1];
+        for (int i = 1; i <= n; i++) {
+            adj[i] = new List<int>();
+        }
+        foreach (int[] path in paths) {
+            int u = path[0], v = path[1];
+            adj[u].Add(v);
+            adj[v].Add(u);
+        }
+        // assign colors to each garden
+        int[] ans = new int[n];
+        for (int i = 1; i <= n; i++) {
+            int[] colors = new int[5]; // colors already assigned to adjacent gardens
+            foreach (int v in adj[i]) {
+                int color = ans[v-1];
+                colors[color] = 1;
+            }
+            for (int c = 1; c <= 4; c++) { // try colors 1 to 4
+                if (colors[c] != 1) {
+                    ans[i-1] = c;
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
+}
