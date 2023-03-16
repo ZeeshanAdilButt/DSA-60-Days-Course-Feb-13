@@ -1,0 +1,52 @@
+public class Solution {
+    public int CoinChange(int[] coins, int amount) {
+        int[] memo = new int[amount+1]; // initialize the memoization array
+        for (int i = 0; i < memo.Length; i++) {
+            memo[i] = -1; // set all memoization values to -1
+        }
+        return CoinChangeRecursive(coins, amount, memo); // call the recursive function
+    }
+    
+    private int CoinChangeRecursive(int[] coins, int amount, int[] memo) {
+       
+        if (amount == 0) { // base case: amount is 0
+            return 0;
+        }
+        
+        if (memo[amount] != -1) { // check if value is already memoized
+            return memo[amount];
+        }
+        
+        int result = int.MaxValue;
+        for (int i = 0; i < coins.Length; i++) {
+            if (coins[i] <= amount) {
+                int subResult = CoinChangeRecursive(coins, amount - coins[i], memo);
+                if (subResult != -1) {
+                    result = Math.Min(result, subResult + 1); // update the result
+                }
+            }
+        }
+        memo[amount] = result == int.MaxValue ? -1 : result; // memoize the result
+        return memo[amount];
+    }
+}
+
+
+public int CoinChange(int[] coins, int amount) {
+    int[] dp = new int[amount + 1];
+    Array.Fill(dp, amount + 1);
+    dp[0] = 0;
+    
+    for (int i = 1; i <= amount; i++) {
+
+        for (int j = 0; j < coins.Length; j++) {
+            if (coins[j] <= i) {
+                dp[i] = Math.Min(dp[i], dp[i - coins[j]] + 1);
+            }
+        }
+
+    }
+    
+    return dp[amount] > amount ? -1 : dp[amount];
+}
+
