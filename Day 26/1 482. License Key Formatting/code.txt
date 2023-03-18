@@ -1,0 +1,19 @@
+public class Solution {
+    public string LicenseKeyFormatting(string s, int k) {
+    s = s.Replace("-", "").ToUpper(); // Remove hyphens and convert to upper case
+    int n = s.Length;
+    StringBuilder result = new StringBuilder();
+    int count = 0; // Counter for characters in current group
+    for (int i = n - 1; i >= 0; i--) {
+        if (count == k) { // If current group is complete, add hyphen
+            result.Insert(0, "-"); // Insert hyphen at the beginning
+            count = 0;
+        }
+        result.Insert(0, s[i]); // Insert current character at the beginning
+        count++;
+    }
+    return result.ToString();
+}
+
+
+}

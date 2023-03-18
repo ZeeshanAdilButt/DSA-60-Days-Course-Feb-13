@@ -1,0 +1,41 @@
+public class Solution {
+    public string MostCommonWord(string paragraph, string[] banned)
+{
+    // Convert the paragraph to lowercase and split into words
+    string[] words = paragraph.ToLower().Split(new char[] {' ', ',', '.', '!', '?', ';', '\''});
+
+    // Create a dictionary to store the frequency of each word
+    Dictionary<string, int> wordFreq = new Dictionary<string, int>();
+
+    // Add each word to the dictionary and increment its frequency count
+    foreach (string word in words)
+    {
+        if (!string.IsNullOrEmpty(word) && !banned.Contains(word))
+        {
+            if (wordFreq.ContainsKey(word))
+            {
+                wordFreq[word]++;
+            }
+            else
+            {
+                wordFreq[word] = 1;
+            }
+        }
+    }
+
+    // Find the word with the highest frequency count
+    int maxFreq = 0;
+    string mostCommonWord = "";
+    foreach (KeyValuePair<string, int> kvp in wordFreq)
+    {
+        if (kvp.Value > maxFreq)
+        {
+            maxFreq = kvp.Value;
+            mostCommonWord = kvp.Key;
+        }
+    }
+
+    return mostCommonWord;
+}
+
+}

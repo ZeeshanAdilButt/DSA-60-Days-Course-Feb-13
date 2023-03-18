@@ -1,0 +1,30 @@
+public class Solution {
+    public int[][] FloodFill(int[][] image, int sr, int sc, int color)
+{
+    int currColor = image[sr][sc];
+    if (currColor != color)
+    {
+        DFS(image, sr, sc, currColor, color);
+    }
+    return image;
+}
+
+private void DFS(int[][] image, int row, int col, int currColor, int newColor)
+{
+    // Base cases for recursion
+    if (row < 0 || row >= image.Length || col < 0 || col >= image[0].Length || image[row][col] != currColor)
+    {
+        return;
+    }
+
+    // Update the current pixel with the new color
+    image[row][col] = newColor;
+
+    // Recursively call DFS for the 4-connected neighbors
+    DFS(image, row - 1, col, currColor, newColor); // up
+    DFS(image, row + 1, col, currColor, newColor); // down
+    DFS(image, row, col - 1, currColor, newColor); // left
+    DFS(image, row, col + 1, currColor, newColor); // right
+}
+
+}
