@@ -1,5 +1,7 @@
 public class Solution {
     public int FindMin(int[] nums) {
+
+
         int n = nums.Length;
         int low = 0, high = n - 1;
 

@@ -1,0 +1,14 @@
+public class Solution {
+   public bool IsValidBST(TreeNode root) {
+        return isValidBST(root, long.MinValue, long.MaxValue);
+    }
+    
+    private bool isValidBST(TreeNode root, long minValue, long maxValue) {
+        if (root == null) return true;
+
+        if (root.val <= minValue || root.val >= maxValue) 
+        return false;
+        
+        return isValidBST(root.left, minValue, root.val) && isValidBST(root.right, root.val, maxValue);
+    }
+}

@@ -1,0 +1,71 @@
+public class Solution {
+    public int Search(int[] nums, int target) {
+        
+
+         if(nums.Length ==1){
+             
+             if(nums[0] == target)
+                 return 0;
+             
+             return -1;
+         }
+        
+        int l=0;
+        int r=nums.Length -1;
+        int mid= (r-l) /2 ;
+        
+         if (nums[mid] == target)
+                return mid;
+           
+         if (nums[r] == target)
+                return r;
+        
+          if (nums[l] == target)
+                return l;
+
+        
+         while (l != mid && r != mid)
+        {
+
+            if (nums[mid] == target)
+                return mid;
+
+            //left portion
+            if (nums[l] < nums[mid])
+            {
+                if (target > nums[mid] || target < nums[l])
+                {
+                    //check in right
+                    l = mid;
+                    mid += (r - l) / 2;
+                }
+                else if (target < nums[mid])
+                {
+                    // check in left
+                    r = mid;
+                    mid -= (r - l) / 2;
+                }
+            }
+            //right porition
+            else
+            {
+                if ((target > nums[mid] && target > nums[r]) || target < nums[mid])
+                {
+                    // check in left
+                    r = mid;
+                    mid -= (r - l) / 2;
+                }
+                else if (target > nums[mid])
+                {
+                    //check in right
+                    l = mid;
+                    mid += (r - l) / 2;
+                }
+            }
+             
+
+        }
+        
+               return -1;
+}
+}

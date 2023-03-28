@@ -1,0 +1,44 @@
+public class Solution {
+    public IList<IList<int>> ThreeSum(int[] nums) {
+        
+        IList<IList<int>> result = new List<IList<int>>();
+        
+       Array.Sort(nums);
+            
+        
+        for (int i=0; i<nums.Length; i++){
+            
+            int l = i +1;
+          
+            int r = nums.Length -1;
+            
+            
+            if(i > 0 && nums[i] == nums[i-1])
+                continue;
+            
+            while (l <r){
+                
+               int threesum = nums[i] + nums[l] + nums[r]; 
+                
+                if(threesum > 0){
+                    r -=1;
+                }
+                else if(threesum < 0){
+                    l +=1;
+                }
+                else{
+                    result.Add(new List<int>{nums[i],nums[l],nums[r]});
+                        l += 1;
+                        while (nums[l] == nums[l-1] && l <r)
+                            l+=1;
+                        
+                }
+                
+            }
+            
+        }
+        
+        return result;
+        
+    }
+}

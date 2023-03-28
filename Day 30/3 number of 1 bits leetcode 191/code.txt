@@ -1,0 +1,18 @@
+public class Solution {
+    public int HammingWeight(uint n) {
+        
+        int totalCount = 0;
+        
+        while(n != 0){
+            
+            if(n%2 ==1)
+                totalCount++;
+            
+            n= n>>1;
+            
+        }
+        
+        return totalCount;
+        
+    }
+}
