@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+
+class Graph {
+
+    private int V;
+
+    private List<int>[] adjList;
+
+    public Graph(int vertices) {
+        V = vertices;
+        adjList = new List<int>[V];
+        for (int i = 0; i < V; i++) {
+            adjList[i] = new List<int>();
+        }
+    }
+
+    public void AddEdge(int u, int v) {
+
+        // bi directional
+        adjList[u].Add(v);
+        adjList[v].Add(u);
+    }
+
+    public void PrintGraph() {
+
+        for (int i = 0; i < V; i++) {
+            Console.Write(i + ": ");
+        
+            foreach (int j in adjList[i]) {
+                Console.Write(j + " ");
+            }
+            
+            Console.WriteLine();
+        }
+    }
+}
+
+class Program {
+    static void Main(string[] args) {
+        Graph g = new Graph(5);
+        g.AddEdge(0, 1);
+        g.AddEdge(0, 4);
+        g.AddEdge(1, 2);
+        g.AddEdge(1, 3);
+        g.AddEdge(1, 4);
+        g.AddEdge(2, 3);
+        g.AddEdge(3, 4);
+        g.PrintGraph();
+    }
+}
