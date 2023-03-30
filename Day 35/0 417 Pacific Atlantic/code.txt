@@ -7,7 +7,10 @@ public class Solution {
 
             int[,] atlantic = new int[rows, cols];
             int[,] pacific = new int[rows, cols];
+            
             List<IList<int>> result = new List<IList<int>>();
+
+            
 
             void DFS(int row, int col, int prevValue, int[,] visited)
             {
@@ -17,7 +20,7 @@ public class Solution {
                     return;
 
                 
-                visited[row, col] = 1;
+                visited[row, col] = 1; //atlantic , pacific
                 
                 //bottom
                 DFS(row + 1, col, heights[row][col], visited); 
@@ -38,11 +41,11 @@ public class Solution {
                 //let's do dfs on first row and all of its columns, as 1st row will always be in 
                 
                 //pacficic ocean
-                DFS(0, i, heights[0][i], atlantic);
+                DFS(0, i, heights[0][i], pacific);
 
                 
                 //and vice versa
-                DFS(rows-1, i, heights[rows-1][i], pacific);
+                DFS(rows-1, i, heights[rows-1][i], atlantic);
             }
 
              for (int i = 0; i < rows; i++)
@@ -51,10 +54,10 @@ public class Solution {
             
                 //let's do dfs on first col and all of its rows, as 1st col will always be in 
                 //pacfici ocean
-                DFS(i, 0, heights[i][0], atlantic);
+                DFS(i, 0, heights[i][0], pacific);
                 
                 //and vice versa
-                DFS(i, cols-1, heights[i][cols-1], pacific);
+                DFS(i, cols-1, heights[i][cols-1], atlantic );
             }
 
         
