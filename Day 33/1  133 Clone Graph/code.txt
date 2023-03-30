@@ -9,7 +9,9 @@ public class Solution {
     }
     
     private Node DFS(Node node, Dictionary<Node, Node> visited) {
-        if (visited.ContainsKey(node)) return visited[node];
+        
+        if (visited.ContainsKey(node))
+        return visited[node];
         
         var newNode = new Node { val = node.val, neighbors = new List<Node>() };
         

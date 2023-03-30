@@ -1,0 +1,56 @@
+class Solution {
+
+    static int[] visited;
+    static List<int>[] graph;
+
+
+    public bool CanFinish(int numCourses, int[][] prerequisites) {
+        
+        visited = new int[numCourses];
+        graph = new List<int>[numCourses];
+
+        for (int i = 0; i < numCourses; i++)
+            graph[i] = new List<int>();
+
+        for (int i = 0; i < prerequisites.Length; i++)
+            graph[prerequisites[i][0]].Add(prerequisites[i][1]);
+
+        for (int i = 0; i < numCourses; i++)
+                if (dfs(i) == false)
+                    return false;
+
+            return true;
+    }
+
+    public bool dfs(int node) {
+
+        visited[node] = 1;
+        
+        for (int i = 0; i < graph[node].Count; i++) {
+
+            int vertex = graph[node][i];
+            
+            if (visited[vertex] == 1)
+                return false;
+
+            //only do dfs if not visited
+            if (visited[vertex] == 0 && dfs(vertex) == false)
+            {
+                return false;
+            }
+            else
+            {
+                //after dfs on vertex if it didn't return false
+                //2 would mean that this vertex has possible path
+                visited[vertex] = 2;
+            }
+           
+
+        }
+
+        //optimization which tells that the node has path
+        visited[node] =2;
+        return true;
+    }
+
+}
