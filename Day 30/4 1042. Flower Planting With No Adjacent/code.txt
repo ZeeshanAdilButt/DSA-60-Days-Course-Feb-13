@@ -5,9 +5,6 @@ public class Solution {
 
         List<int>[] adj = new List<int>[n+1];
 
-
-
-
         for (int i = 1; i <= n; i++) {
             adj[i] = new List<int>(); // neighbors , (max 3)
         }

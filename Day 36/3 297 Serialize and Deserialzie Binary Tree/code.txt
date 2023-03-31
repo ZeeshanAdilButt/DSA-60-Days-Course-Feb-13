@@ -1,0 +1,23 @@
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public string serialize(TreeNode root) {
+        if (root == null) return "null,";
+        return root.val + "," + serialize(root.left) + serialize(root.right);
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(string data) {
+        Queue<string> nodes = new Queue<string>(data.Split(','));
+        return helper(nodes);
+    }
+    
+    TreeNode helper(Queue<string> nodes) {
+        string val = nodes.Dequeue();
+        if (val == "null") return null;
+        TreeNode node = new TreeNode(int.Parse(val));
+        node.left = helper(nodes);
+        node.right = helper(nodes);
+        return node;
+    }
+}
