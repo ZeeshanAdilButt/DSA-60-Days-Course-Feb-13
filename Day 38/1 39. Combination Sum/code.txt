@@ -1,0 +1,30 @@
+public class Solution {
+    public IList<IList<int>> CombinationSum(int[] candidates, int target) {
+
+        var resultArray = new List<IList<int>>();
+
+        DFS(0, new List<int>(), target, candidates, resultArray);
+
+        return resultArray;
+        
+    }
+
+    public void DFS(int index, List<int> currArray,int target, int[] candidates, IList<IList<int>> resultArray){
+
+       if (target == currArray.Sum())
+        {
+            resultArray.Add(new List<int>(currArray));
+            return;
+        }
+            
+        if(index>=candidates.Length ||  currArray.Sum() > target)
+          return;
+
+        currArray.Add(candidates[index]);
+        DFS(index, currArray, target , candidates, resultArray);
+
+        currArray.RemoveAt(currArray.Count()-1);
+        DFS(index + 1, currArray, target , candidates, resultArray);
+
+    }
+}

@@ -1,0 +1,20 @@
+public class Solution {
+    public IList<IList<int>> CombinationSum3(int k, int n) {
+        var result = new List<IList<int>>();
+        var tempList = new List<int>();
+        Backtrack(k, n, 1, tempList, result);
+        return result;
+    }
+    
+    private void Backtrack(int k, int n, int start, List<int> tempList, List<IList<int>> result) {
+        if (tempList.Count == k && n == 0) {
+            result.Add(new List<int>(tempList));
+        } else if (tempList.Count < k && n > 0) {
+            for (int i = start; i <= 9; i++) {
+                tempList.Add(i);
+                Backtrack(k, n - i, i + 1, tempList, result);
+                tempList.RemoveAt(tempList.Count - 1);
+            }
+        }
+    }
+}
