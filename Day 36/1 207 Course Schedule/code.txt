@@ -29,6 +29,7 @@ class Solution {
         visited[node] = 1;
         
 
+
         for (int i = 0; i < graph[node].Count; i++) {
 
             int vertex = graph[node][i];
@@ -39,13 +40,17 @@ class Solution {
             //only do dfs if not visited
             if (visited[vertex] == 0 && dfs(vertex) == false)
             {
-                return false;
+                //return false;
+                visited[node] =3; // can't be taken
+                break;
+            }else{
+                visited[node] =2; // can be taken
             }
           
         }
 
         //optimization which tells that the node has path
-        visited[node] =2;
+         // OPTIMIZATION
         return true;
     }
 
