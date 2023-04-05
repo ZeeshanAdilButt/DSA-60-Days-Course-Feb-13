@@ -24,6 +24,8 @@ public class Solution {
             if (x == m - 1 && y == n - 1)
                 return 1;
 
+            // how many UniquePaths
+            // minimum 
             dp[x, y] = FindWays(x + 1, y, m, n, dp) + FindWays(x, y + 1, m, n, dp);
 
             return dp[x, y];
