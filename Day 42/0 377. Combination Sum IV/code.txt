@@ -1,0 +1,22 @@
+public class Solution {
+    public int CombinationSum4(int[] nums, int target) {
+        var memo = new int[target + 1];
+        Array.Fill(memo, -1);
+        memo[0] = 1;
+        return CountCombinations(nums, target, memo);
+    }
+    
+    private int CountCombinations(int[] nums, int target, int[] memo) {
+        if (memo[target] != -1) {
+            return memo[target];
+        }
+        int count = 0;
+        for (int i = 0; i < nums.Length; i++) {
+            if (target >= nums[i]) {
+                count += CountCombinations(nums, target - nums[i], memo);
+            }
+        }
+        memo[target] = count;
+        return count;
+    }
+}

@@ -1,0 +1,53 @@
+public bool WordBreak(string s, IList<string> wordDict) {
+    // Base case: empty string is always valid
+    if (s == "") {
+        return true;
+    }
+    
+    // Check if any word in dictionary matches the prefix of s
+    foreach (string word in wordDict) {
+        if (s.StartsWith(word)) {
+            // Recursively check if the remaining suffix can be segmented
+            if (WordBreak(s.Substring(word.Length), wordDict)) {
+                return true;
+            }
+        }
+    }
+    
+    // None of the words in the dictionary match the prefix of s
+    return false;
+}
+
+public class Solution {
+    public bool WordBreak(string s, IList<string> wordDict) {
+
+        bool[] dp = new bool[s.Length+1];
+
+        for(int i=0; i<dp.Length; i++){
+            dp[i]= false;
+        }
+        
+        dp[s.Length]=true;
+
+        for (int i = s.Length -1; i>=0; i--){
+
+            foreach(string word in wordDict){
+                
+               string currentRemaining = s.Substring(i);
+
+                if(word.Length <= currentRemaining.Length && currentRemaining.StartsWith(word)){
+                    
+                    dp[i]= dp[i + word.Length];
+                    
+                }
+
+                //if any match found break for other words
+                if(dp[i])
+                break;
+            }
+        }
+
+        return dp[0];
+        
+    }
+}
